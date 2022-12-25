@@ -1,0 +1,98 @@
+<html>
+
+<head>
+    <title>Lagan Kumawat</title>
+    <script>
+        function fun() {
+            var name = document.forms.RegForm.Name.value
+            var email = document.forms.RegForm.EMail.value
+            var phone = document.forms.RegForm.MobileNumber.value
+            var regEmail = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/g //Javascript reGex for Email Validation.
+            var regPhone = /^\d{10}$/ // Javascript reGex for Phone Number validation.
+
+
+            if (email == '' || !regEmail.test(email)) {
+                window.alert('Please enter a valid e-mail address.')
+                email.focus()
+                return false
+            }
+
+
+            if (phone == '' || !regPhone.test(phone)) {
+                alert('Please enter valid phone number.')
+                phone.focus()
+                return false
+            }
+
+            return true
+        }
+    </script>
+
+    <style>
+        body{
+            background-color: #CFFDE1;
+        }
+        div {
+            box-sizing: border-box;
+            width: 100%;
+            border: 100px solid black;
+            float: left;
+            align-content: center;
+            align-items: center;
+        }
+        
+        form {
+            margin: 0 0 0 450px;
+            width: 600px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 style="text-align: center">Please fill up your details</h2><br>
+    <form name="RegForm" onsubmit="return fun()" method="post">
+
+        <label for="fname">First Name:</label>
+        <input type="text" size="44" name="Name" id="fname" />
+        <br> <br>
+        <label for="fname">Middle Name:</label>
+        <input type="text" size="42" name="Name" id="fname" />
+        <br> <br>
+        <label for="fname">Last Name:</label>
+        <input type="text" size="45" name="Name" id="fname" />
+        <br> <br>
+        <label for="dob">Date Of Birth:</label>
+        <input type="date" size="50" name="Date" id="dob">
+        <br> <br>
+        <label for="email">E-mail:</label>
+        <input type="text" size="49" name="EMail" id="email" />
+        <br> <br>
+        <label for="mobn">Mobile Number:</label>
+        <input type="text" size="40" name="MobileNumber" id="mobn" />
+        <br> <br>
+        <label for="add">Address:</label>
+        <textarea cols="45" size="50" name="Address" id="add"></textarea>
+        <br> <br>
+        <label for="add">City:</label>
+        <input type="text" size="50" name="Address" id="add" />
+        <br> <br>
+        <label for="add">State:</label>
+        <input type="text" size="50" name="Address" id="add" />
+        <br> <br>
+        <label for="country">Country:</label>
+        <select type="text" name="Address" id="country">
+                <option>India</option>
+                <option>USA</option>
+                <option>UK</option>
+                <option>Australia</option>
+                <option>Japan</option>
+              </select>
+        <br> <br>
+
+        <input type="submit" value="Submit" name="Submit" />
+
+
+    </form>
+</body>
+
+</html>
